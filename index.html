@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Geekveria — Tu Nación Geek | Bogotá</title>
+<meta name="description" content="Descubre Geekveria en Bogotá: café, manga, cómics, figuras, juegos y cuatro regiones para vivir tu lado geek. Calle 100 # 60-77.">
+<meta name="theme-color" content="#15110E">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CO">
+<meta property="og:site_name" content="Geekveria">
+<meta property="og:title" content="Geekveria — La experiencia geek sigue después de SOFA">
+<meta property="og:description" content="Café, manga, cómics, juegos y cuatro regiones en un solo territorio. Síguenos, regístrate y comparte tu foto de SOFA: 10% de descuento en Geekveria, Calle 100.">
+<!-- Al publicar, cambia esta ruta por la URL completa de la imagen (ej. https://tudominio.com/img/og.jpg) -->
+<meta property="og:image" content="img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2315110E'/%3E%3Cpolygon points='32,10 37.9,24.6 53.6,25.7 41.6,36 45.4,51.3 32,43 18.6,51.3 22.4,36 10.4,25.7 26.1,24.6' fill='%23FFC93C'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap">
+
+<style>
+:root{
+  --ink:#15110E; --cream:#EFE6D3; --paper:#FFFDF8; --yellow:#FFC93C; --red:#E4452F;
+  --text:#F4EDE0; --muted:#D9CEBB; --muted2:#B9AC98; --brown:#4A3F32; --line:#C9BA9A;
+  --gold:#6B4A12; --err:#A3260F;
+  --display:'Bricolage Grotesque','DM Sans',system-ui,sans-serif;
+  --body:'DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:'DM Mono',ui-monospace,Menlo,monospace;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--ink);color:var(--text);font-family:var(--body);font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased;padding-bottom:88px}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3,p,ol,ul{margin:0}
+ol,ul{padding:0;list-style:none}
+:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+.on-light :focus-visible{outline-color:var(--ink)}
+[hidden]{display:none!important}
+
+.wrap{max-width:1160px;margin:0 auto;padding-left:clamp(20px,5vw,56px);padding-right:clamp(20px,5vw,56px)}
+.sec{padding-top:clamp(64px,10vw,120px);padding-bottom:clamp(64px,10vw,120px)}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:500}
+.h2{font-family:var(--display);font-weight:800;font-size:clamp(36px,7.4vw,72px);line-height:1;letter-spacing:-.03em}
+.lead{font-size:clamp(18px,2.2vw,21px);line-height:1.5}
+.y{color:var(--yellow)}
+
+/* Botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 28px;border-radius:16px;border:0;font:700 17px/1 var(--body);text-decoration:none;cursor:pointer;text-align:center}
+.btn-yellow{background:var(--yellow);color:var(--ink)}
+.btn-ink{background:var(--ink);color:var(--yellow)}
+.btn:hover{filter:brightness(1.06)}
+.btn svg{flex:none}
+
+/* HERO */
+.hero{background:var(--ink);color:var(--text)}
+.hero .wrap{padding-top:22px;padding-bottom:clamp(56px,9vw,112px)}
+.brand{display:flex;align-items:center;gap:10px}
+.brand .eyebrow{font-size:13px}
+.hero-grid{display:flex;flex-wrap:wrap;align-items:center;gap:40px 56px;margin-top:clamp(40px,8vw,96px)}
+.hero-copy{flex:1 1 420px;min-width:0}
+.tag{display:inline-block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--yellow);border:1px solid var(--yellow);border-radius:999px;padding:7px 14px}
+.hero h1{margin-top:24px;font-family:var(--display);font-weight:800;font-size:clamp(42px,9.6vw,84px);line-height:.98;letter-spacing:-.03em;overflow-wrap:break-word}
+.hero .lead{margin-top:28px;color:var(--muted);max-width:540px}
+.hero .btn{margin-top:36px}
+.hero-media{flex:1 1 420px;min-width:0}
+.hero-media img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:24% 50%;border-radius:24px}
+.stripe{height:12px;background:linear-gradient(var(--yellow) 0 50%,var(--red) 50% 100%)}
+
+/* VISA / PASOS */
+.light{background:var(--cream);color:var(--ink)}
+.light .eyebrow{color:var(--gold)}
+.visa-grid{display:flex;flex-wrap:wrap;gap:40px 56px;margin-top:clamp(36px,6vw,64px);align-items:flex-start}
+.visa-steps{flex:1 1 380px;min-width:0}
+.visa-claim{flex:1 1 400px;min-width:0;max-width:560px}
+.steps{border-top:2px solid var(--ink)}
+.step{display:flex;gap:18px;padding:24px 0;border-bottom:1px solid var(--line)}
+.step .num{font-family:var(--mono);font-size:14px;font-weight:500;padding-top:6px;min-width:26px}
+.step h3{font-family:var(--display);font-weight:700;font-size:26px;line-height:1.15;letter-spacing:-.01em}
+.step p{margin-top:6px;color:var(--brown)}
+.social{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.chip{display:inline-flex;align-items:center;min-height:48px;padding:0 20px;border-radius:12px;border:1.5px solid var(--ink);font-weight:700;font-size:16px;text-decoration:none;color:var(--ink)}
+.chip:hover{background:var(--ink);color:var(--yellow)}
+.reward{margin-top:28px;background:var(--yellow);border:2px solid var(--ink);border-radius:20px;padding:24px}
+.reward .eyebrow{color:var(--ink)}
+.reward strong{display:block;margin-top:10px;font-family:var(--display);font-weight:800;font-size:clamp(26px,5vw,34px);line-height:1.08;letter-spacing:-.02em}
+.reward p{margin-top:10px}
+.reward .vig{font-weight:700}
+
+.pass{background:var(--ink);color:var(--text);border-radius:20px;padding:22px;margin-bottom:14px}
+.pass-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.pass .eyebrow{color:var(--yellow)}
+.pass dl{margin:22px 0 0}
+.pass dt{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted2)}
+.pass dd{margin:4px 0 0;font-size:16px}
+.pass dd+dt{margin-top:18px}
+.pass .who{font-family:var(--display);font-weight:700;font-size:28px;line-height:1.1;letter-spacing:-.01em;text-transform:uppercase;overflow-wrap:anywhere}
+
+.card{background:var(--paper);border:1.5px solid var(--ink);border-radius:24px;padding:clamp(22px,4vw,32px)}
+.card h3{font-family:var(--display);font-weight:800;font-size:30px;line-height:1.05;letter-spacing:-.02em}
+form{display:flex;flex-direction:column;gap:20px;margin-top:22px}
+label.lbl{display:block;margin-bottom:8px;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
+input[type=text],input[type=email],input[type=tel]{width:100%;height:54px;padding:0 16px;font:400 17px var(--body);color:var(--ink);background:#fff;border:1.5px solid #B8A987;border-radius:12px;-webkit-appearance:none;appearance:none}
+input[type=text]:focus,input[type=email]:focus,input[type=tel]:focus{border-color:var(--ink)}
+input[aria-invalid=true]{border-color:var(--err)}
+.err{margin-top:8px;font-size:14px;font-weight:500;color:var(--err)}
+.consent{display:flex;gap:14px;align-items:flex-start;min-height:44px;font-size:14px;line-height:1.5;color:var(--brown);cursor:pointer}
+.consent input{width:24px;height:24px;flex:0 0 24px;margin:1px 0 0;accent-color:var(--ink)}
+.senderr{padding:14px 16px;border-radius:12px;background:#FBE3DC;color:var(--err);font-size:15px;font-weight:500}
+.submit{min-height:60px;border:0;border-radius:16px;background:var(--ink);color:var(--yellow);font:700 18px var(--body);cursor:pointer}
+.submit[disabled]{opacity:.7;cursor:wait}
+.note{margin-top:-4px;font-size:14px;color:#6B5F50;text-align:center}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.done{display:flex;flex-direction:column;align-items:flex-start;gap:16px;padding:8px 0}
+.done .tick{width:56px;height:56px;border-radius:50%;background:var(--yellow);border:2px solid var(--ink);display:inline-flex;align-items:center;justify-content:center}
+.done h3:focus{outline:none}
+.done p{font-size:17px;color:var(--brown)}
+
+/* REGIONES */
+.dark{background:var(--ink);color:var(--text)}
+.dark .eyebrow{color:var(--yellow)}
+.dark .lead{margin-top:22px;color:var(--muted);max-width:600px}
+.regions{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:20px;margin-top:clamp(36px,6vw,64px)}
+.region{background:#1F1914;border:1px solid rgba(244,237,224,.16);border-radius:24px;overflow:hidden}
+.region img{width:100%;height:230px;object-fit:cover}
+.region-body{padding:26px 26px 30px}
+.region .eyebrow{font-size:12px}
+.region h3{margin-top:12px;font-family:var(--display);font-weight:700;font-size:30px;line-height:1.1;letter-spacing:-.02em}
+.region p{margin-top:12px;color:var(--muted);line-height:1.55}
+.region p.strong{color:var(--text);font-weight:500;margin-top:10px}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.pills li{font-size:14px;padding:6px 14px;border-radius:999px;border:1px solid rgba(244,237,224,.28)}
+.pills li.hl{border-color:var(--yellow);color:var(--yellow)}
+
+/* VISITA */
+.gold{background:var(--yellow);color:var(--ink)}
+.gold .eyebrow{color:var(--ink)}
+.visit-grid{display:flex;flex-wrap:wrap;gap:44px 64px;align-items:center}
+.visit-copy{flex:1.4 1 420px;min-width:0}
+.visit-copy .h2{margin-top:18px;font-size:clamp(40px,8.6vw,92px);line-height:.96;letter-spacing:-.035em}
+.visit-copy p{margin-top:24px;font-size:clamp(18px,2.3vw,22px);line-height:1.45;max-width:600px}
+.visit-copy .btn{margin-top:32px}
+.visit-media{flex:1 1 300px;min-width:0;max-width:460px}
+.visit-media img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:24px;border:2px solid var(--ink)}
+.facts{display:flex;flex-wrap:wrap;gap:28px 48px;margin-top:clamp(44px,7vw,72px);padding-top:28px;border-top:2px solid var(--ink)}
+.facts div{flex:1 1 220px;min-width:0}
+.facts dt{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
+.facts dd{margin:8px 0 0;font-family:var(--display);font-weight:700;font-size:24px;line-height:1.2}
+.facts a{text-decoration:underline;text-underline-offset:4px}
+
+/* CIERRE + PIE */
+.close h2{font-family:var(--display);font-weight:800;font-size:clamp(34px,7vw,80px);line-height:1;letter-spacing:-.03em;max-width:900px}
+.close .btn{margin-top:36px}
+.foot{background:var(--ink);color:var(--muted2);border-top:1px solid rgba(244,237,224,.16)}
+.foot .wrap{padding-top:32px;padding-bottom:32px;display:flex;flex-wrap:wrap;gap:20px 40px;justify-content:space-between;align-items:flex-start}
+.foot ul{display:flex;flex-wrap:wrap;gap:0 24px}
+.foot a{color:var(--text);text-underline-offset:4px;display:inline-flex;align-items:center;min-height:44px}
+.foot p{font-size:15px;line-height:1.6}
+.foot strong{color:var(--text)}
+
+/* BARRA FIJA */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:50;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(21,17,14,.94);border-top:1px solid rgba(244,237,224,.18);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);transition:transform .25s ease}
+.bar.is-hidden{transform:translateY(110%)}
+.bar-in{max-width:560px;margin:0 auto;display:flex;gap:10px}
+.bar a{display:inline-flex;align-items:center;justify-content:center;min-height:52px;border-radius:14px;font-weight:700;font-size:16px;text-decoration:none}
+.bar .a1{flex:1.5 1 0;background:var(--yellow);color:var(--ink)}
+.bar .a2{flex:1 1 0;border:1.5px solid rgba(244,237,224,.5);color:var(--text)}
+@media (prefers-reduced-motion:reduce){.bar{transition:none}}
+</style>
+</head>
+<body>
+
+<!-- 1. HERO -->
+<header class="hero">
+  <div class="wrap">
+    <div class="brand">
+      <svg width="18" height="18" viewBox="60 60 80 80" aria-hidden="true"><polygon points="100,74 106.47,91.1 124.73,91.97 110.46,103.4 115.28,121.03 100,111 84.72,121.03 89.54,103.4 75.27,91.97 93.53,91.1" fill="#FFC93C"/></svg>
+      <span class="eyebrow">Tu Nación Geek</span>
+    </div>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="tag">Más allá de SOFA</span>
+        <h1><span class="y">10% de descuento</span> en toda la tienda.</h1>
+        <p class="lead">Síguenos en alguna de nuestras redes sociales, regístrate y comparte tu foto del stand y recibe tu visa de La Nación Geek cuando nos visites en la Calle 100.</p>
+        <a class="btn btn-yellow" href="#visa">Quiero mi 10%
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#15110E" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+      <div class="hero-media">
+        <img src="img/bandera.jpg" width="1400" height="594" fetchpriority="high" alt="Bandera de Geekveria: franjas crema, roja y amarilla sobre fondo café, con un escudo de estrella">
+      </div>
+    </div>
+  </div>
+</header>
+<div class="stripe" aria-hidden="true"></div>
+
+<main>
+<!-- 3. VISA: PASOS + REGISTRO -->
+<section class="light on-light sec" id="visa">
+  <div class="wrap">
+    <span class="eyebrow">Tu pase a Geekveria</span>
+    <h2 class="h2" style="margin-top:16px;max-width:760px">Tu visa, paso a paso</h2>
+    <p class="lead" style="margin-top:22px;color:var(--brown);max-width:560px">Completa los siguientes pasos y recoge tu visa en La Nación Geek.</p>
+
+    <div class="visa-grid">
+      <div class="visa-steps">
+        <ol class="steps">
+          <li class="step">
+            <span class="num">01</span>
+            <div>
+              <h3>Síguenos</h3>
+              <p>Sigue a Geekveria en redes sociales.</p>
+              <div class="social">
+                <a class="chip" href="https://www.instagram.com/geekveria/" target="_blank" rel="noopener">Instagram</a>
+                <a class="chip" href="https://www.facebook.com/profile.php?id=61585155956472" target="_blank" rel="noopener">Facebook</a>
+                <a class="chip" href="https://www.tiktok.com/@geekveria" target="_blank" rel="noopener">TikTok</a>
+              </div>
+            </div>
+          </li>
+          <li class="step">
+            <span class="num">02</span>
+            <div>
+              <h3>Regístrate</h3>
+              <p>Llena el formulario de esta página. Toma un minuto.</p>
+            </div>
+          </li>
+          <li class="step">
+            <span class="num">03</span>
+            <div>
+              <h3>Comparte tu foto</h3>
+              <p>Tómate una foto en nuestro stand de SOFA y compártela etiquetando a <strong>@geekveria</strong> con <strong>#NacionGeekSOFA</strong>.</p>
+            </div>
+          </li>
+        </ol>
+
+        <div class="reward">
+          <span class="eyebrow">Lo que recibes</span>
+          <strong>Tu visa: 10% de descuento en toda la tienda</strong>
+          <p>Te la entregamos en Geekveria, Calle 100, al comprobar que cumpliste los tres pasos.</p>
+          <p class="vig">Vigencia: hasta el 31 de octubre.</p>
+        </div>
+      </div>
+
+      <div class="visa-claim">
+        <div class="pass" aria-hidden="true">
+          <div class="pass-top">
+            <span class="eyebrow">Visa · Geekveria</span>
+            <svg width="22" height="22" viewBox="60 60 80 80"><polygon points="100,74 106.47,91.1 124.73,91.97 110.46,103.4 115.28,121.03 100,111 84.72,121.03 89.54,103.4 75.27,91.97 93.53,91.1" fill="#FFC93C"/></svg>
+          </div>
+          <dl>
+            <dt>Titular</dt>
+            <dd class="who" id="pass-name">Tu nombre</dd>
+            <dt>Territorio</dt>
+            <dd>Geekveria · Calle 100, Bogotá</dd>
+            <dt>Beneficio</dt>
+            <dd>10% de descuento en toda la tienda</dd>
+          </dl>
+        </div>
+
+        <div class="card" id="registro">
+          <h3>Tu registro</h3>
+
+          <form id="reg-form" novalidate>
+            <div>
+              <label class="lbl" for="f-nombre">Nombre</label>
+              <input id="f-nombre" name="nombre" type="text" autocomplete="name" placeholder="Tu nombre" aria-describedby="e-nombre">
+              <p class="err" id="e-nombre" role="alert" hidden>Escribe tu nombre.</p>
+            </div>
+            <div>
+              <label class="lbl" for="f-correo">Correo</label>
+              <input id="f-correo" name="correo" type="email" autocomplete="email" inputmode="email" placeholder="tucorreo@correo.com" aria-describedby="e-correo">
+              <p class="err" id="e-correo" role="alert" hidden>Revisa tu correo.</p>
+            </div>
+            <div>
+              <label class="lbl" for="f-celular">Celular · opcional</label>
+              <input id="f-celular" name="celular" type="tel" autocomplete="tel" inputmode="tel" placeholder="300 000 0000">
+            </div>
+            <div class="hp" aria-hidden="true"><label>No llenar este campo<input type="text" name="web" tabindex="-1" autocomplete="off"></label></div>
+            <div>
+              <label class="consent" for="f-auth">
+                <input id="f-auth" name="autorizacion" type="checkbox" aria-describedby="e-auth">
+                <span>Autorizo el tratamiento de mis datos personales por Geekveria conforme a la Ley 1581 de 2012 para recibir información, beneficios y novedades de la marca. Puedo solicitar su eliminación cuando quiera.</span>
+              </label>
+              <p class="err" id="e-auth" role="alert" hidden>Necesitamos tu autorización para guardar tu registro.</p>
+            </div>
+            <p class="senderr" id="e-send" role="alert" hidden>No se pudo enviar. Intenta de nuevo.</p>
+            <button class="submit" type="submit" id="btn-send">Enviar mi registro</button>
+            <p class="note">Sin spam. Solo información Geek que te va a encantar.</p>
+          </form>
+
+          <div class="done" id="done" hidden>
+            <span class="tick"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#15110E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+            <h3 id="done-title" tabindex="-1">Registro listo.</h3>
+            <p>Ya quedaste registrado. Si ya nos seguiste y compartiste tu foto del stand, te esperamos en tu Nación Geek para recibir tu visa.</p>
+            <a class="btn btn-ink" href="https://www.google.com/maps/search/?api=1&amp;query=Av.+Calle+100+%2360-77+Bogot%C3%A1" target="_blank" rel="noopener">Ver cómo llegar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. REGIONES -->
+<section class="dark sec">
+  <div class="wrap">
+    <span class="eyebrow">Descubre el territorio</span>
+    <h2 class="h2" style="margin-top:16px">Cuatro regiones.<br>Un solo lugar.</h2>
+    <p class="lead">Geekveria no es solo una tienda. Es un lugar para comprar, jugar, leer, comer, trabajar o simplemente quedarse.</p>
+
+    <div class="regions">
+      <article class="region">
+        <img src="img/panoramica.jpg" width="1600" height="679" loading="lazy" alt="Barista preparando café en la barra de Geekveria, con pastelería a la vista y la tienda al fondo" style="object-position:18% 50%">
+        <div class="region-body">
+          <span class="eyebrow">01 — Montañas Cafeteras</span>
+          <h3>Aquí empieza la visita.</h3>
+          <p>Café preparado en serio, greca, molino, pastelería y sándwiches para acompañar una tarde geek como debe ser.</p>
+          <ul class="pills"><li>Café</li><li>Pastelería</li><li>Sándwiches</li></ul>
+        </div>
+      </article>
+      <article class="region">
+        <img src="img/arcade.jpg" width="1400" height="782" loading="lazy" alt="Dos jóvenes jugando en la máquina arcade The King of Fighters '97, con el café al fondo" style="object-position:50% 42%">
+        <div class="region-body">
+          <span class="eyebrow">02 — Valle Geek</span>
+          <h3>Aquí empieza la partida.</h3>
+          <p>Rol, juegos de mesa, arcade y bolirana. Ven con tu grupo o reserva el espacio para una partida, encuentro o evento.</p>
+          <ul class="pills"><li>Rol</li><li>Juegos de mesa</li><li>Arcade</li><li class="hl">Espacio alquilable</li></ul>
+        </div>
+      </article>
+      <article class="region">
+        <img src="img/otaku.jpg" width="1400" height="1045" loading="lazy" alt="Patio interior de Geekveria con pérgola de madera, mesas y murales de anime y Godzilla" style="object-position:50% 55%">
+        <div class="region-body">
+          <span class="eyebrow">03 — Región Otaku</span>
+          <h3>Un rincón para quedarse.</h3>
+          <p>Anime, manga y un patio interior con mesas donde puedes leer, estudiar, trabajar o simplemente pasar el rato.</p>
+          <ul class="pills"><li>Anime</li><li>Manga</li><li>Patio</li><li>Coworking</li></ul>
+        </div>
+      </article>
+      <article class="region">
+        <img src="img/vitrinas.jpg" width="1400" height="782" loading="lazy" alt="Vitrinas y estantes con figuras de colección, cartas, cómics y juegos de rol" style="object-position:50% 30%">
+        <div class="region-body">
+          <span class="eyebrow">04 — Geekveria City</span>
+          <h3>Aquí vive la colección.</h3>
+          <p>Cómics, manga, figuras, ropa, Pokémon, Magic y más.</p>
+          <p class="strong">Y antes de salir, pasa por el mural de los héroes.</p>
+          <ul class="pills"><li>Figuras</li><li>Cómics</li><li>Manga</li><li>TCG</li></ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 5. PUENTE + VISITA -->
+<section class="gold on-light sec" id="visita">
+  <div class="wrap">
+    <div class="visit-grid">
+      <div class="visit-copy">
+        <span class="eyebrow">Cuando salgas de SOFA</span>
+        <h2 class="h2">La siguiente parada queda en la Calle 100.</h2>
+        <p>SOFA dura unos días. Geekveria está ahí para cuando quieras volver a entrar en modo geek.</p>
+        <p style="margin-top:16px">Encuéntranos cerca de Iserra 100 y de la estación Av. Suba - Calle 100 de TransMilenio. Allí te entregamos tu visa.</p>
+        <a class="btn btn-ink" href="https://www.google.com/maps/search/?api=1&amp;query=Av.+Calle+100+%2360-77+Bogot%C3%A1" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFC93C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+          Abrir en Google Maps</a>
+      </div>
+      <div class="visit-media">
+        <img src="img/tienda.jpg" width="900" height="1200" loading="lazy" alt="Camisetas en percha y vitrina de figuras Funko Pop dentro de la tienda, con el patio al fondo">
+      </div>
+    </div>
+    <dl class="facts">
+      <div><dt>Dirección</dt><dd>Av. Calle 100 # 60-77 · Bogotá</dd></div>
+      <div><dt>Horario</dt><dd>Lunes a sábado<br>8:00 a.m. – 7:30 p.m.</dd></div>
+      <div><dt>WhatsApp</dt><dd><a href="https://wa.me/573058372215" target="_blank" rel="noopener">305 837 2215</a></dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- 7. CIERRE -->
+<section class="dark sec close">
+  <div class="wrap">
+    <h2>Hoy en SOFA,<br><span class="y">la próxima vez, nos vemos en Geekveria.</span></h2>
+    <a class="btn btn-yellow" href="#registro">Ir al registro</a>
+  </div>
+</section>
+</main>
+
+<!-- 8. PIE -->
+<footer class="foot">
+  <div class="wrap">
+    <ul>
+      <li><a href="https://www.instagram.com/geekveria/" target="_blank" rel="noopener">Instagram</a></li>
+      <li><a href="https://www.facebook.com/profile.php?id=61585155956472" target="_blank" rel="noopener">Facebook</a></li>
+      <li><a href="https://www.tiktok.com/@geekveria" target="_blank" rel="noopener">TikTok</a></li>
+      <li><a href="https://geekveria.com.co" target="_blank" rel="noopener">Tienda online</a></li>
+    </ul>
+    <p><strong>Geekveria · Tu Nación Geek</strong><br>Av. Calle 100 # 60-77 · Bogotá D.C.</p>
+  </div>
+</footer>
+
+<!-- 2. BARRA FIJA -->
+<nav class="bar" id="bar" aria-label="Acciones rápidas">
+  <div class="bar-in">
+    <a class="a1" href="#registro">Registrarme</a>
+    <a class="a2" href="https://www.google.com/maps/search/?api=1&amp;query=Av.+Calle+100+%2360-77+Bogot%C3%A1" target="_blank" rel="noopener">Cómo llegar</a>
+  </div>
+</nav>
+
+<script>
+/* ============================================================
+   CONFIGURACIÓN: pega aquí la URL de la aplicación web de
+   Google Apps Script (termina en /exec). Ver LEEME.md.
+   Sin esta URL el formulario NO guarda registros.
+   ============================================================ */
+var FORM_ENDPOINT = "";
+
+(function () {
+  var form = document.getElementById('reg-form');
+  var done = document.getElementById('done');
+  var btn = document.getElementById('btn-send');
+  var nameIn = document.getElementById('f-nombre');
+  var mailIn = document.getElementById('f-correo');
+  var phoneIn = document.getElementById('f-celular');
+  var authIn = document.getElementById('f-auth');
+  var passName = document.getElementById('pass-name');
+  var eName = document.getElementById('e-nombre');
+  var eMail = document.getElementById('e-correo');
+  var eAuth = document.getElementById('e-auth');
+  var eSend = document.getElementById('e-send');
+
+  nameIn.addEventListener('input', function () {
+    passName.textContent = nameIn.value.trim() || 'Tu nombre';
+  });
+
+  function flag(input, msg, bad) {
+    msg.hidden = !bad;
+    if (input) input.setAttribute('aria-invalid', bad ? 'true' : 'false');
+  }
+
+  function validate() {
+    var okName = nameIn.value.trim().length > 0;
+    var okMail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(mailIn.value.trim());
+    var okAuth = authIn.checked;
+    flag(nameIn, eName, !okName);
+    flag(mailIn, eMail, !okMail);
+    flag(authIn, eAuth, !okAuth);
+    if (!okName) { nameIn.focus(); return false; }
+    if (!okMail) { mailIn.focus(); return false; }
+    if (!okAuth) { authIn.focus(); return false; }
+    return true;
+  }
+
+  [nameIn, mailIn].forEach(function (el) {
+    el.addEventListener('input', function () { el.setAttribute('aria-invalid', 'false'); });
+  });
+
+  function showDone() {
+    form.hidden = true;
+    done.hidden = false;
+    var t = document.getElementById('done-title');
+    t.focus({ preventScroll: true });
+    done.scrollIntoView({ block: 'center' });
+  }
+
+  function showError() { eSend.hidden = false; }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    eSend.hidden = true;
+    if (!validate()) return;
+
+    // Campo trampa: si un bot lo llena, se simula éxito sin enviar nada.
+    if (form.elements['web'].value) { showDone(); return; }
+
+    if (!FORM_ENDPOINT) {
+      if (window.console) console.error('FORM_ENDPOINT está vacío: configura la URL de Apps Script (ver LEEME.md).');
+      showError();
+      return;
+    }
+
+    var params = new URLSearchParams(window.location.search);
+    var body = new URLSearchParams();
+    body.set('nombre', nameIn.value.trim());
+    body.set('correo', mailIn.value.trim());
+    body.set('celular', phoneIn.value.trim());
+    body.set('autorizacion', 'sí');
+    body.set('origen', params.get('src') || 'qr-sofa');
+
+    btn.disabled = true;
+    var label = btn.textContent;
+    btn.textContent = 'Enviando…';
+
+    var ctrl = ('AbortController' in window) ? new AbortController() : null;
+    var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 15000);
+
+    fetch(FORM_ENDPOINT, { method: 'POST', mode: 'no-cors', body: body, signal: ctrl ? ctrl.signal : undefined })
+      .then(function () { showDone(); })
+      .catch(function () { showError(); })
+      .then(function () {
+        clearTimeout(timer);
+        btn.disabled = false;
+        btn.textContent = label;
+      });
+  });
+
+  // La barra fija se esconde mientras el formulario está a la vista.
+  var bar = document.getElementById('bar');
+  var reg = document.getElementById('registro');
+  if ('IntersectionObserver' in window && bar && reg) {
+    new IntersectionObserver(function (entries) {
+      bar.classList.toggle('is-hidden', entries[0].isIntersecting);
+    }, { threshold: 0.2 }).observe(reg);
+  }
+})();
+</script>
+</body>
+</html>
